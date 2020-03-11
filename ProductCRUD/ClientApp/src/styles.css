@@ -14,3 +14,15 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+input.ng-touched.ng-invalid{
+    border-color: #dc3545;
+}
+
+input.ng-valid{
+    border-color: #28a745;
+}
+
+table tr:hover{
+    cursor: pointer;
+}

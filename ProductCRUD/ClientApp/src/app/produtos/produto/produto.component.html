@@ -1,0 +1,21 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="Id" [value]="service.formData.Id" />
+  <div class="form-group">
+    <div class="input-group">
+      <input name="Nome" #Nome="ngModel" [(ngModel)]="service.formData.Nome" class="form-control" placeholder="Nome do Produto" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input name="ValorVenda" #ValorVenda="ngModel" [(ngModel)]="service.formData.ValorVenda" class="form-control" placeholder="Valor da Venda" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input name="Imagem" #Imagem="ngModel" [(ngModel)]="service.formData.Imagem" class="form-control" placeholder="Imagem" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"> Salvar</button>
+  </div>
+</form>

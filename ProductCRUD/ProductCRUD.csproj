@@ -14,6 +14,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +27,24 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\produtos\produto-lista\produto-lista.component.ts" />
+    <None Remove="ClientApp\src\app\produtos\produtos.component.ts" />
+    <None Remove="ClientApp\src\app\produtos\produto\produto.component.ts" />
+    <None Remove="ClientApp\src\app\shared\produto.model.ts" />
+    <None Remove="ClientApp\src\app\shared\produto.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\produtos\produto-lista\produto-lista.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\produtos\produtos.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\produtos\produto\produto.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\produto.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\produto.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
