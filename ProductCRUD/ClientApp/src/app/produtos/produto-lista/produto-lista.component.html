@@ -1,4 +1,12 @@
-<table class="table table-hover">
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nome do Produto</th>
+      <th>Valor da Venda</th>
+      <th>Imagem</th>
+      <th></th>
+    </tr>
+  </thead>
   <tbody>
     <tr *ngFor="let prod of service.list">
       <td (click)="populateForm(prod)">{{prod.Nome}}</td>
