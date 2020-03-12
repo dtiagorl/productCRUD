@@ -30,19 +30,44 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\app.routing.ts" />
+    <None Remove="ClientApp\src\app\helpers\auth.guard.ts" />
+    <None Remove="ClientApp\src\app\helpers\basic-auth.interceptor.ts" />
+    <None Remove="ClientApp\src\app\helpers\error.interceptor.ts" />
+    <None Remove="ClientApp\src\app\helpers\index.ts" />
+    <None Remove="ClientApp\src\app\login\index.ts" />
+    <None Remove="ClientApp\src\app\login\login.component.ts" />
+    <None Remove="ClientApp\src\app\models\index.ts" />
+    <None Remove="ClientApp\src\app\models\user.ts" />
+    <None Remove="ClientApp\src\app\produtos\index.ts" />
     <None Remove="ClientApp\src\app\produtos\produto-lista\produto-lista.component.ts" />
     <None Remove="ClientApp\src\app\produtos\produtos.component.ts" />
     <None Remove="ClientApp\src\app\produtos\produto\produto.component.ts" />
+    <None Remove="ClientApp\src\app\services\authentication.service.ts" />
+    <None Remove="ClientApp\src\app\services\index.ts" />
+    <None Remove="ClientApp\src\app\services\user.service.ts" />
     <None Remove="ClientApp\src\app\shared\produto.model.ts" />
     <None Remove="ClientApp\src\app\shared\produto.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\app.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\auth.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\basic-auth.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\error.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\user.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\produtos\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\produtos\produto-lista\produto-lista.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\produtos\produtos.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\produtos\produto\produto.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\produto.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\produto.service.ts" />
   </ItemGroup>
