@@ -1,3 +1,48 @@
+<style>
+  .image-wrap {
+    padding: 10px;
+    border: solid 1px #e0e0e0;
+    display: inline-block;
+  }
+
+  .img-space {
+    border: dashed 1px #d3d3d3;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    min-height: 175px;
+  }
+
+    .img-space img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      cursor: pointer;
+    }
+
+  .fileInputProfileWrap {
+    width: 100%;
+    height: auto;
+  }
+
+  .fileInputProfile {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+  }
+
+    .fileInputProfile[disabled] + .img-space {
+      pointer-events: none;
+      cursor: not-allowed !important;
+    }
+
+</style>
+
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
   <input type="hidden" name="Id" [value]="service.formData.Id" />
   <div class="form-group">
@@ -11,9 +56,30 @@
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group">
-      <input name="Imagem" #Imagem="ngModel" [(ngModel)]="service.formData.Imagem" class="form-control" placeholder="Imagem" required />
-    </div>
+
+    <fieldset class="form-group">
+
+      <div *ngIf="imageError" class="alert alert-danger m-3">{{imageError}}</div>
+      
+      <div class="custom-file fileInputProfileWrap">
+        <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile" required />
+        <div class="img-space">
+
+          <ng-container *ngIf="isImageSaved; else elseTemplate">
+            <img [src]="cardImageBase64" />
+          </ng-container>
+          <ng-template #elseTemplate>
+            <img src="../../../assets/placeholder.png" class="img-responsive" />
+          </ng-template>
+
+        </div>
+      </div>
+
+    </fieldset>
+
+  </div>
+  <div class="form-group">
+    <a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved">Remover Imagem</a>
   </div>
   <div class="form-group">
     <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"> Salvar</button>

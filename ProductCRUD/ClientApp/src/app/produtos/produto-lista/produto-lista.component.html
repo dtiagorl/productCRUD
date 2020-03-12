@@ -11,7 +11,7 @@
     <tr *ngFor="let prod of service.list">
       <td (click)="populateForm(prod)">{{prod.Nome}}</td>
       <td (click)="populateForm(prod)">{{prod.ValorVenda}}</td>
-      <td (click)="populateForm(prod)">{{prod.Imagem}}</td>
+      <td (click)="populateForm(prod)"><img src="{{prod.Imagem}}" style="width: 200px" /></td>
       <td>
         <button class="btn btn-sm btn-danger" (click)="onDelete(prod.Id)">Excluir</button>
       </td>
