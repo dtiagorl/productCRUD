@@ -99,7 +99,11 @@ export class ProdutoComponent implements OnInit {
 
     }
     else
+    {
+      this.service.formData.Imagem = this.cardImageBase64;
       this.updateRecord(form);
+    
+    }
   }
 
   insertRecord(form: NgForm) {
